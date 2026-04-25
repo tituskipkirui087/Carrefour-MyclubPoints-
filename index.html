@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrefour Online Kenya - Shop Online for Grocery, Mobiles, Electronics &amp; More</title>
+  <meta name="description" content="Shop for Groceries, Mobiles, TVs, Home Appliances, Electronics &amp; more on Carrefour Online, the most trusted retail brand in Westlands, Nairobi. Up to 70% off - Free Shipping Available - Guaranteed Quality - Fast Delivery &amp; Easy Returns!" />
+  <meta property="og:title" content="Carrefour Online Kenya - Shop Online for Grocery, Mobiles, Electronics &amp; More" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="https://cdnprod.mafretailproxy.com/mafrp-web/assets/en/images/default/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0e5aa7',
+            'primary-active': '#0a4a8a',
+          },
+          keyframes: {
+            'fade-in-up': {
+              '0%': { opacity: '0', transform: 'translateY(8px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-white text-gray-700">
+
+  <!-- ======= STICKY HEADER ======= -->
+  <header id="main-header" class="sticky top-0 z-40 flex w-full flex-col items-center justify-center shadow-[0_4px_24px_0px_rgba(0,0,0,0.06)]" style="background: linear-gradient(to bottom, #9DB0C4, #FFFFFF); padding: 8px 16px 0;">
+    <div class="w-full max-w-screen-xl mx-auto">
+
+      <!-- Delivery Type Buttons Row -->
+      <div class="no-scrollbar flex gap-3 overflow-x-auto mb-3 pt-1">
+        <button id="btn-scheduled" onclick="selectDelivery('scheduled')" class="delivery-btn active-delivery flex shrink-0 flex-col items-center justify-between rounded-lg font-bold" style="background-color:#093b6c; color:#FFFFFF; width:72px; height:86px; padding:6px 4px 6px;">
+          <div class="shrink-0 overflow-hidden" style="width:40px; height:40px;">
+            <img alt="Scheduled" src="https://cdnprod.mafretailproxy.com/assets/images/Scheduled_Active_f11726afcc.png" style="width:100%; height:100%; object-fit:contain;" />
+          </div>
+          <div class="font-bold overflow-hidden text-ellipsis" style="font-size:11px; line-height:14px;">Scheduled</div>
+        </button>
+        <button id="btn-express" onclick="selectDelivery('express')" class="delivery-btn flex shrink-0 flex-col items-center justify-between rounded-lg font-bold" style="background-color:#FFFFFF; border:2px solid #CF9E36; color:#285E9C; width:72px; height:86px; padding:6px 4px 6px;">
+          <div class="shrink-0 overflow-hidden" style="width:40px; height:40px;">
+            <img alt="Express" src="https://cdnprod.mafretailproxy.com/assets/images/NOW_ada18b55b2.png" style="width:100%; height:100%; object-fit:contain;" />
+          </div>
+          <div class="font-bold overflow-hidden text-ellipsis" style="font-size:11px; line-height:14px;">Express</div>
+        </button>
+      </div>
+
+      <!-- Main Row: Logo + Delivery Info + Search + Auth + Cart -->
+      <div class="flex w-full flex-col md:flex-row md:items-center gap-3 mb-3">
+
+        <!-- Logo (desktop only) -->
+        <a class="hidden md:block shrink-0 mr-6" href="#">
+          <img alt="Carrefour" src="https://cdnprod.mafretailproxy.com/mafrp-web/assets/en/images/default/logo.svg" width="128" height="32" style="color:transparent;" />
+        </a>
+
+        <!-- Delivery Info + Address selector -->
+        <div class="flex items-center justify-between md:flex-col md:items-start md:mr-6 md:shrink-0 mb-1 md:mb-0 gap-1">
+          <div class="flex items-center gap-1 px-2 py-1 rounded-br-lg rounded-tl-lg italic font-bold" style="color:#ffffff; background-color:#093A6C; font-size:13px; line-height:16px;">
+            <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Truck_4a8f65e4a7.svg" width="16" height="16" style="color:transparent;" />
+            <span>Today 9:00 PM</span>
+          </div>
+          <button class="flex items-center gap-1 font-bold text-gray-600" style="font-size:13px; line-height:16px;">
+            <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Map_Pin_a9020f25c7_cb956ef53b.svg" class="md:hidden" width="18" height="18" style="color:transparent;" />
+            <span class="truncate px-1 md:px-0" style="max-width:220px;">Westlands - Nairobi</span>
+            <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Caret_Down_Arrow_for_address_location_acd9b0d72f.svg" class="ml-1" width="16" height="16" style="color:transparent;" />
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="flex-grow md:mr-6 relative">
+          <form onsubmit="return false;" class="relative">
+            <input autocomplete="off" id="search-input" class="w-full bg-white px-10 py-2.5 outline-none rounded-lg text-black focus:ring-2 focus:ring-blue-400" type="text" value="" style="height:48px; border:1px solid #1a237e; font-size:16px;" />
+            <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Media_Search_leading_3b9e5ca618.svg" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2" width="24" height="24" style="color:transparent;" />
+            <div id="search-placeholder" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 flex gap-1 pl-8" style="color:#a3a3a3; font-size:16px;">
+              <span class="whitespace-pre-wrap">Search</span>
+              <span class="inline-block animate-fade-in-up"><strong>50,000+</strong></span>
+              <span class="whitespace-pre-wrap">items</span>
+            </div>
+            <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
+              <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Magnifying_Glass_edf286d1bd_2f0512e414.svg" width="16" height="16" style="color:transparent;" />
+            </button>
+          </form>
+        </div>
+
+        <!-- Auth (desktop) -->
+        <div class="hidden md:flex items-center gap-6 mr-6">
+          <button class="flex items-center justify-center" style="width:28px; height:34px;">
+            <img alt="Kenya Flag" src="https://mafretailblobstorage.blob.core.windows.net/countryimages/KE.png" width="24" height="16" />
+          </button>
+          <a href="login.html" class="flex items-center gap-2 cursor-pointer whitespace-nowrap">
+            <svg class="text-gray-600 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 15C14.0711 15 15.75 13.3211 15.75 11.25C15.75 9.17893 14.0711 7.5 12 7.5C9.92893 7.5 8.25 9.17893 8.25 11.25C8.25 13.3211 9.92893 15 12 15Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.98 18.69C6.55 17.58 7.41 16.65 8.47 15.996C9.53 15.34 10.75 15 12 15C13.25 15 14.47 15.34 15.53 15.996C16.59 16.65 17.45 17.58 18.02 18.69" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="font-bold text-gray-600" style="font-size:15px;">Login &amp; Register</span>
+          </a>
+        </div>
+
+        <!-- Cart (desktop) -->
+        <a href="#" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full shrink-0" style="background-color:#0e5aa7;">
+          <svg class="text-white shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 21.375C8.12 21.375 8.625 20.87 8.625 20.25C8.625 19.63 8.12 19.125 7.5 19.125C6.88 19.125 6.375 19.63 6.375 20.25C6.375 20.87 6.88 21.375 7.5 21.375Z" fill="currentColor"/>
+            <path d="M17.25 21.375C17.87 21.375 18.375 20.87 18.375 20.25C18.375 19.63 17.87 19.125 17.25 19.125C16.63 19.125 16.125 19.63 16.125 20.25C16.125 20.87 16.63 21.375 17.25 21.375Z" fill="currentColor"/>
+            <path d="M3.96 6.75H20.79L18.31 15.41C18.22 15.73 18.03 16 17.77 16.2C17.51 16.39 17.19 16.5 16.87 16.5H7.88C7.56 16.5 7.24 16.39 6.98 16.2C6.72 16 6.53 15.73 6.44 15.41L3.05 3.54C3 3.39 2.91 3.25 2.78 3.15C2.65 3.05 2.49 3 2.33 3H0.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="font-bold text-white text-center" id="cart-count" style="min-width:18px; font-size:15px;">0</span>
+        </a>
+
+        <!-- Mobile: Cart + Hamburger -->
+        <div class="flex md:hidden items-center gap-3 ml-auto">
+          <a href="#" class="flex items-center gap-1 px-3 py-2 rounded-full" style="background-color:#0e5aa7;">
+            <svg class="text-white" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7.5 21.375C8.12 21.375 8.625 20.87 8.625 20.25C8.625 19.63 8.12 19.125 7.5 19.125C6.88 19.125 6.375 19.63 6.375 20.25C6.375 20.87 6.88 21.375 7.5 21.375Z" fill="currentColor"/>
+              <path d="M17.25 21.375C17.87 21.375 18.375 20.87 18.375 20.25C18.375 19.63 17.87 19.125 17.25 19.125C16.63 19.125 16.125 19.63 16.125 20.25C16.125 20.87 16.63 21.375 17.25 21.375Z" fill="currentColor"/>
+              <path d="M3.96 6.75H20.79L18.31 15.41C18.22 15.73 18.03 16 17.77 16.2C17.51 16.39 17.19 16.5 16.87 16.5H7.88C7.56 16.5 7.24 16.39 6.98 16.2C6.72 16 6.53 15.73 6.44 15.41L3.05 3.54C3 3.39 2.91 3.25 2.78 3.15C2.65 3.05 2.49 3 2.33 3H0.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="font-bold text-white" id="cart-count-mobile">0</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Category Navigation (desktop) -->
+      <nav class="hidden md:flex w-full items-center" style="color:#093b6c;">
+        <div class="no-scrollbar flex items-center overflow-x-auto whitespace-nowrap">
+          <div class="flex items-center cursor-pointer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="shrink-0">
+              <path d="M10.5 4.5H4.5V10.5H10.5V4.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19.5 4.5H13.5V10.5H19.5V4.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10.5 13.5H4.5V19.5H10.5V13.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19.5 13.5H13.5V19.5H19.5V13.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">All Categories</a></div>
+          </div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Fresh Food</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Fruits &amp; Vegetables</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Food Cupboard</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Beverages</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Baby Products</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Smartphones, Tablets, and Wearables</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Electronics &amp; Appliances</a></div></div>
+          <div class="flex items-center cursor-pointer"><div class="nav-item flex py-4 px-4"><a href="#" class="text-sm font-bold leading-4">Frozen Food</a></div></div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ======= MAIN CONTENT ======= -->
+  <div class="md:mt-4">
+    <main class="mx-auto mb-8 mt-0 flex w-full flex-col px-4 md:container md:pb-0" style="min-height:80vh;">
+      <div class="flex w-full max-w-full flex-col gap-4 md:gap-8">
+
+        <!-- Promo Strip -->
+        <div class="no-scrollbar flex gap-4 overflow-x-auto">
+          <div class="flex shrink-0 rounded-sm md:flex-1">
+            <div class="flex h-10 w-full shrink-0 items-center rounded-sm px-3 py-1" style="background-color:#8A1538;">
+              <a class="flex w-full items-center gap-2 whitespace-nowrap" style="color:#ffffff;" href="#">
+                <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/YCOT_Strip_ICON_b99f4a252a.png" style="height:28px; width:auto; object-fit:contain;" />
+                <div class="text-sm font-bold">New here? Save Upto  KES 1000 On Your First 4 Orders</div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Banner + Daily Offers wrapper -->
+        <div class="flex w-full flex-col gap-2 md:gap-4">
+
+          <!-- Hero Banner Carousel -->
+          <div class="relative w-full">
+            <div class="relative overflow-hidden rounded-xl group transition-all duration-300">
+              <div class="relative overflow-hidden transition-transform duration-300 ease-in-out hover:scale-[1.01]">
+                <div id="hero-track" class="flex transition-transform duration-500 ease-in-out">
+                  <div class="hero-slide shrink-0 relative w-full">
+                    <div class="animate-pulse rounded-md bg-gray-100 absolute inset-0 z-0"></div>
+                    <a href="#">
+                      <img alt="Family Celebration New Launch" src="https://cdnprod.mafretailproxy.com/assets/images/Family_C_Cross_Hero_Banner_web_d54e8a5af7.png" class="w-full h-full object-cover relative z-10" loading="eager" />
+                    </a>
+                  </div>
+                  <div class="hero-slide shrink-0 relative w-full">
+                    <div class="animate-pulse rounded-md bg-gray-100 absolute inset-0 z-0"></div>
+                    <a href="#">
+                      <img alt="Back to School New Launch" src="https://cdnprod.mafretailproxy.com/assets/images/Mini_BTS_Hero_Banner_web_5b82ac8457.png" class="w-full h-full object-cover relative z-10" loading="eager" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <button id="hero-prev" class="hero-btn absolute flex items-center justify-center rounded-full w-12 h-12 left-4 top-1/2 -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100 bg-black bg-opacity-30" type="button" aria-label="Previous slide">
+                <svg class="text-white rotate-180" width="16" height="16" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M0.5 0.75L6.75 7L0.5 13.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sr-only">Previous slide</span>
+              </button>
+              <button id="hero-next" class="hero-btn absolute flex items-center justify-center rounded-full w-12 h-12 right-4 top-1/2 -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100 bg-black bg-opacity-30" type="button" aria-label="Next slide">
+                <svg class="text-white" width="16" height="16" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M0.5 0.75L6.75 7L0.5 13.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sr-only">Next slide</span>
+              </button>
+              <!-- Dots -->
+              <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+                <button class="hero-dot w-2 h-2 rounded-full bg-white" data-idx="0" style="opacity:1;"></button>
+                <button class="hero-dot w-2 h-2 rounded-full bg-white" data-idx="1" style="opacity:0.5;"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Daily Offers Carousel -->
+          <div class="relative" role="region" aria-roledescription="carousel">
+            <div class="overflow-hidden">
+              <div id="offers-track" class="flex gap-2 md:gap-4 transition-transform duration-300 ease-in-out" style="margin-left:0;">
+
+                <!-- Brand Day VON - no label -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Brand_Day_Daily_Offers_VON_9bceea05e6.png" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+                <!-- Lowest Prices -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <div class="offer-label absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap rounded-b-md px-1.5 py-0.5 z-10" style="background-color:#ffffff; color:#2d2d2d;">
+                      <div class="font-bold text-xs">Shop Now!</div>
+                    </div>
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/lowestprice_newapp_dailyoffer_en_2x_3b361e6a1b_c6518f8c8b.jpeg" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+                <!-- DOD -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <div class="offer-label absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap rounded-b-md px-1.5 py-0.5 z-10" style="color:#2d2d2d;">
+                      <div class="font-bold text-xs">While Offers Last!</div>
+                    </div>
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/DOD_ANIMATION_static_6f5c210117.png" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+                <!-- Weekly Leaflet -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <div class="offer-label absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap rounded-b-md px-1.5 py-0.5 z-10" style="background-color:#ffffff; color:#2d2d2d;">
+                      <div class="font-bold text-xs">Don't Miss Out!</div>
+                    </div>
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/WEEKLY_LEAFLET_static_5949d180b4.png" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+                <!-- Online Exclusives -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <div class="offer-label absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap rounded-b-md px-1.5 py-0.5 z-10" style="color:#2d2d2d;">
+                      <div class="font-bold text-xs">Tap Into</div>
+                    </div>
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/Brand_Exclusives_13_b3468c1496.png" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+                <!-- WOW Prices -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <div class="offer-label absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap rounded-b-md px-1.5 py-0.5 z-10" style="color:#2d2d2d;">
+                      <div class="font-bold text-xs">No Kidding!</div>
+                    </div>
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/WOW_Prices_Logo_Static_3ee8b7221f.png" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+                <!-- Coupon Bank -->
+                <a href="#" class="shrink-0">
+                  <div class="offer-card relative rounded-xl border-2 p-1 overflow-hidden" style="height:136px; width:106px; border-color:#2d2d2d;">
+                    <div class="offer-label absolute left-1/2 -translate-x-1/2 top-0 whitespace-nowrap rounded-b-md px-1.5 py-0.5 z-10" style="color:#2d2d2d;">
+                      <div class="font-bold text-xs">Tap For Treats</div>
+                    </div>
+                    <img alt="" src="https://cdnprod.mafretailproxy.com/assets/images/dailyoffer_couponbank_en_436c3a53e3_d5a0d14196.jpg" class="w-full h-full rounded-md object-cover" />
+                  </div>
+                </a>
+
+              </div>
+            </div>
+            <!-- Prev/Next for desktop -->
+            <button id="offers-prev" class="absolute h-12 w-12 rounded-full -left-6 top-1/2 -translate-y-1/2 hidden md:block z-10" type="button" aria-label="Previous slide">
+              <svg class="stroke-1" style="color:#d1d5db;" height="48" stroke="currentColor" viewBox="0 0 48 48" width="48" fill="none">
+                <g><circle cx="24" cy="24" fill="white" r="23.5" stroke="#e5e7eb"/><path d="M19 23.99L28.28 14L29 14.7L20.37 23.99L28.99 33.3L28.27 34L19 23.99Z"/></g>
+              </svg>
+              <span class="sr-only">Previous slide</span>
+            </button>
+            <button id="offers-next" class="absolute h-12 w-12 rounded-full -right-6 top-1/2 -translate-y-1/2 hidden md:block z-10" type="button" aria-label="Next slide">
+              <svg class="stroke-1" style="color:#374151;" height="48" stroke="currentColor" viewBox="0 0 48 48" width="48" fill="none">
+                <g><circle cx="24" cy="24" fill="white" r="23.5" stroke="#e5e7eb"/><path d="M29 23.99L19.72 14L19 14.7L27.63 23.99L19.01 33.3L19.73 34L29 23.99Z"/></g>
+              </svg>
+              <span class="sr-only">Next slide</span>
+            </button>
+          </div>
+
+          <!-- ===== TOP CATEGORIES ===== -->
+          <div class="flex w-full flex-col">
+            <div class="mb-4 flex justify-between gap-4">
+              <div class="font-bold md:text-xl" style="font-size:16px;">Top Categories</div>
+            </div>
+            <div class="no-scrollbar flex flex-col gap-4 overflow-x-auto">
+
+              <!-- Row 1 -->
+              <div class="flex gap-2">
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;" class="md:w-[135px]">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Matunda &amp; Mboga" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Matunda_and_Mboga_ba692b176b.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Matunda &amp; Mboga</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Maziwa &amp; Mayai" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Maziwa_and_Mayai_51218feae7.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Maziwa &amp; Mayai</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Meat &amp; Poultry" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Meat_and_Poultry_e5c8cf1800.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Meat &amp; Poultry</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Bakery" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Bakery_07f9e2f0f7.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Bakery</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Frozen Food" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Frozen_Foods_2c294e14ff.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Frozen Food</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Healthy Living" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Healthy_Living_08_44ff5aa18c.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Healthy Living</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Snacks" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Snacks_01e4a20851.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Snacks</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Cooking Ingredients" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Cooking_Ingredients_cbe125c637.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Cooking Ingredients</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Mom &amp; Baby Picks" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Mom_and_Baby_Picks_9b69b45e03.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Mom &amp; Baby Picks</div>
+                  </div>
+                </a></div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="flex gap-2">
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Beverages" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Beverages_094b13a87a.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Beverages</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Beauty &amp; Personal Care" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Beauty_and_Personal_Care_12f3dd8f99.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Beauty &amp; Personal Care</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Write It Out" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Write_It_Out_9f1271bb8f.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Write It Out</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Spoil Your Pet" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Spoil_Your_Pet_12_2eef5684de.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Spoil Your Pet</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Small Appliances" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Small_Appliances_8726b5ed1d.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Small Appliances</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Large Appliances" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Large_Appliances_425ed5134f.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Large Appliances</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Kitchen &amp; Dining" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Kitchen_and_Dining_1d82e47c70.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Kitchen &amp; Dining</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Pombe" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Pombe_62c08c7167.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Pombe</div>
+                  </div>
+                </a></div>
+                <div><a class="flex cursor-pointer flex-col items-center justify-center rounded-[10px] px-1" href="#">
+                  <div style="width:85px;">
+                    <div class="rounded-[10px] overflow-hidden" style="width:85px; height:85px; background-color:#F4f4f4;">
+                      <img alt="Feel Good Finds" class="object-contain w-full h-full rounded-[10px]" src="https://cdnprod.mafretailproxy.com/assets/images/Homepage_ICONS_Feel_Good_Finds_807387fa89.png?im=Resize=300" />
+                    </div>
+                    <div class="mt-1 text-center font-bold text-primary break-words" style="font-size:11px; line-height:14px;">Feel Good Finds</div>
+                  </div>
+                </a></div>
+              </div>
+
+            </div>
+          </div>
+          <!-- END Top Categories -->
+
+        </div>
+        <!-- END Hero + Daily Offers wrapper -->
+
+        <!-- ===== DEALS OF THE DAY ===== -->
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <div class="font-bold md:text-xl" style="font-size:16px;">Deals of the Day</div>
+            <a href="#" class="font-bold text-sm" style="color:#0e5aa7;">See All</a>
+          </div>
+          <div class="no-scrollbar flex gap-3 overflow-x-auto pb-2">
+
+            <!-- Product Card 1 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-20%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h9d/h28/10386001846302/421380_2.jpg" alt="Product" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour Whole Milk 1L</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 89</span>
+                  <span class="line-through text-xs text-gray-400">KES 110</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-15%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h8b/h0b/10460200591390/375849_2.jpg" alt="Product" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Brooke Bond Chai Bora 500g</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 279</span>
+                  <span class="line-through text-xs text-gray-400">KES 329</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-30%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h18/hfe/9870618640414/311862_2.jpg" alt="Product" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Kimbo Cooking Fat 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 349</span>
+                  <span class="line-through text-xs text-gray-400">KES 499</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-10%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h01/hf0/10460200394782/375601_2.jpg" alt="Product" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Ariel Washing Powder 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 449</span>
+                  <span class="line-through text-xs text-gray-400">KES 499</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-25%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h3e/hff/9870618378270/311844_2.jpg" alt="Product" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Omo Automatic Washing Powder 3Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 599</span>
+                  <span class="line-through text-xs text-gray-400">KES 799</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#CF9E36;">New</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hbd/h10/10460200460318/375611_2.jpg" alt="Product" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour Long Grain Rice 5Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 699</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 7 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-18%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h04/h25/10460200624158/375855_2.jpg" alt="Indomie Noodles" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Indomie Noodles Chicken 70g x10</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 199</span>
+                  <span class="line-through text-xs text-gray-400">KES 249</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 8 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-22%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h7b/h40/10460200361006/375594_2.jpg" alt="Cooking Oil" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Bonita Cooking Oil 2L</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 469</span>
+                  <span class="line-through text-xs text-gray-400">KES 599</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 9 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-12%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hf5/hc6/10460200427550/375606_2.jpg" alt="Blue Band" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Blue Band Original Margarine 500g</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 219</span>
+                  <span class="line-through text-xs text-gray-400">KES 249</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 10 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-35%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h14/hb7/10460200558622/375625_2.jpg" alt="Nescafe" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Nescafé Classic Coffee 200g</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 399</span>
+                  <span class="line-through text-xs text-gray-400">KES 619</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 11 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-16%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/ha7/h7a/10460200492062/375615_2.jpg" alt="Sugar" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour White Sugar 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 239</span>
+                  <span class="line-through text-xs text-gray-400">KES 285</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Product Card 12 -->
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#CF9E36;">WOW</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hce/he1/10386001912862/421384_2.jpg" alt="Flour" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Jogoo Maize Flour 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 129</span>
+                  <span class="line-through text-xs text-gray-400">KES 165</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- END Deals of the Day -->
+
+        <!-- ===== MID-PAGE PROMO BANNERS ===== -->
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+          <a href="#">
+            <div class="rounded-xl overflow-hidden" style="height:110px; background:#2d2d2d;">
+              <img src="https://cdnprod.mafretailproxy.com/assets/images/DOD_ANIMATION_static_6f5c210117.png" alt="Deals of the Day" class="w-full h-full object-cover" />
+            </div>
+          </a>
+          <a href="#">
+            <div class="rounded-xl overflow-hidden" style="height:110px; background:#2d2d2d;">
+              <img src="https://cdnprod.mafretailproxy.com/assets/images/WEEKLY_LEAFLET_static_5949d180b4.png" alt="Weekly Leaflet" class="w-full h-full object-cover" />
+            </div>
+          </a>
+          <a href="#">
+            <div class="rounded-xl overflow-hidden" style="height:110px; background:#2d2d2d;">
+              <img src="https://cdnprod.mafretailproxy.com/assets/images/WOW_Prices_Logo_Static_3ee8b7221f.png" alt="WOW Prices" class="w-full h-full object-cover" />
+            </div>
+          </a>
+          <a href="#">
+            <div class="rounded-xl overflow-hidden" style="height:110px; background:#2d2d2d;">
+              <img src="https://cdnprod.mafretailproxy.com/assets/images/Brand_Exclusives_13_b3468c1496.png" alt="Online Exclusives" class="w-full h-full object-cover" />
+            </div>
+          </a>
+        </div>
+
+        <!-- ===== BACK TO SCHOOL ===== -->
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <div class="font-bold md:text-xl" style="font-size:16px;">Back to School</div>
+            <a href="#" class="font-bold text-sm" style="color:#0e5aa7;">See All</a>
+          </div>
+          <!-- BTS Banner -->
+          <a href="#">
+            <div class="rounded-xl overflow-hidden" style="height:120px; background:#2d2d2d;">
+              <img src="https://cdnprod.mafretailproxy.com/assets/images/Mini_BTS_Hero_Banner_web_5b82ac8457.png" alt="Back to School" class="w-full h-full object-cover rounded-xl" />
+            </div>
+          </a>
+          <div class="no-scrollbar flex gap-3 overflow-x-auto pb-2">
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#0e5aa7;">School</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h1c/h4e/10460200329246/375588_2.jpg" alt="Notebook" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour Notebook A4 80 Pages x5</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 249</span>
+                  <span class="line-through text-xs text-gray-400">KES 299</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#0e5aa7;">School</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hcd/h56/10460200296478/375583_2.jpg" alt="Pens" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Bic Ballpoint Pens Blue x10</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 149</span>
+                  <span class="line-through text-xs text-gray-400">KES 179</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-20%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h7f/h2e/10460200263710/375577_2.jpg" alt="Backpack" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour School Backpack 20L</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 1,199</span>
+                  <span class="line-through text-xs text-gray-400">KES 1,499</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#0e5aa7;">School</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hae/hf2/10460200230942/375572_2.jpg" alt="Geometry Set" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Helix Geometry Set 9-Piece</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 199</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-25%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hf4/h89/10460200198174/375567_2.jpg" alt="Lunch Box" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour Lunch Box with Bottle Set</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 599</span>
+                  <span class="line-through text-xs text-gray-400">KES 799</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#0e5aa7;">School</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h1c/h40/10460200165406/375562_2.jpg" alt="Colour Pencils" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Crayola Colour Pencils 24 Pack</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 349</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- END Back to School -->
+
+        <!-- ===== POPULAR GROCERIES ===== -->
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <div class="font-bold md:text-xl" style="font-size:16px;">Popular Groceries</div>
+            <a href="#" class="font-bold text-sm" style="color:#0e5aa7;">See All</a>
+          </div>
+          <div class="no-scrollbar flex gap-3 overflow-x-auto pb-2">
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hba/hf8/10386001977374/421388_2.jpg" alt="Unga" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Soko Maize Flour 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 125</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-14%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h9d/h28/10386001846302/421380_2.jpg" alt="Milk" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">KCC Fresh Whole Milk 500ml</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 49</span>
+                  <span class="line-through text-xs text-gray-400">KES 57</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h8b/h0b/10460200591390/375849_2.jpg" alt="Tea" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Kericho Gold Tea Bags 100s</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 379</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-10%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h18/hfe/9870618640414/311862_2.jpg" alt="Kimbo" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Kimbo Cooking Fat 1Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 179</span>
+                  <span class="line-through text-xs text-gray-400">KES 199</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hf5/hc6/10460200427550/375606_2.jpg" alt="Blue Band" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Blue Band Original Margarine 500g</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 219</span>
+                  <span class="line-through text-xs text-gray-400">KES 249</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-22%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h7b/h40/10460200361006/375594_2.jpg" alt="Bonita Oil" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Bonita Sunflower Cooking Oil 2L</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 469</span>
+                  <span class="line-through text-xs text-gray-400">KES 599</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hbd/h10/10460200460318/375611_2.jpg" alt="Rice" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Pishori Rice 5Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 849</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-35%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h14/hb7/10460200558622/375625_2.jpg" alt="Nescafe" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Nescafé Classic Instant Coffee 200g</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 399</span>
+                  <span class="line-through text-xs text-gray-400">KES 619</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- END Popular Groceries -->
+
+        <!-- ===== ELECTRONICS & APPLIANCES ===== -->
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <div class="font-bold md:text-xl" style="font-size:16px;">Electronics &amp; Appliances</div>
+            <a href="#" class="font-bold text-sm" style="color:#0e5aa7;">See All</a>
+          </div>
+          <div class="no-scrollbar flex gap-3 overflow-x-auto pb-2">
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:180px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-15%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hf3/h1a/10460200132638/375557_2.jpg" alt="Smart TV" class="w-full h-full object-contain p-3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22180%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Syinix 32" Smart LED TV Android</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 21,999</span>
+                  <span class="line-through text-xs text-gray-400">KES 25,999</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:180px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-20%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hf8/h82/10460200099870/375552_2.jpg" alt="Microwave" class="w-full h-full object-contain p-3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22180%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Von Microwave Oven 20L 700W</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 5,999</span>
+                  <span class="line-through text-xs text-gray-400">KES 7,499</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:180px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#CF9E36;">Hot Deal</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hcf/h08/10460200067102/375547_2.jpg" alt="Kettle" class="w-full h-full object-contain p-3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22180%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Mika Electric Kettle 1.7L Stainless</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 1,599</span>
+                  <span class="line-through text-xs text-gray-400">KES 1,999</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:180px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:180px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-30%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hcb/hf9/10460200034334/375542_2.jpg" alt="Blender" class="w-full h-full object-contain p-3" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22180%22 height=%22180%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour Countertop Blender 1.5L</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 1,749</span>
+                  <span class="line-through text-xs text-gray-400">KES 2,499</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <!-- END Electronics -->
+
+        <!-- ===== HOUSEHOLD ESSENTIALS ===== -->
+        <div class="flex w-full flex-col gap-4">
+          <div class="flex justify-between items-center">
+            <div class="font-bold md:text-xl" style="font-size:16px;">Household Essentials</div>
+            <a href="#" class="font-bold text-sm" style="color:#0e5aa7;">See All</a>
+          </div>
+          <div class="no-scrollbar flex gap-3 overflow-x-auto pb-2">
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-10%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h01/hf0/10460200394782/375601_2.jpg" alt="Ariel" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Ariel Washing Powder 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 449</span>
+                  <span class="line-through text-xs text-gray-400">KES 499</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-25%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/h3e/hff/9870618378270/311844_2.jpg" alt="Omo" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Omo Automatic Washing Powder 3Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 599</span>
+                  <span class="line-through text-xs text-gray-400">KES 799</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-16%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/ha7/h7a/10460200492062/375615_2.jpg" alt="Sugar" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Carrefour White Sugar 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 239</span>
+                  <span class="line-through text-xs text-gray-400">KES 285</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#CF9E36;">WOW</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hce/he1/10386001912862/421384_2.jpg" alt="Jogoo" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Jogoo Maize Flour 2Kg</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 129</span>
+                  <span class="line-through text-xs text-gray-400">KES 165</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card shrink-0 rounded-xl border border-gray-100 bg-white overflow-hidden" style="width:160px; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+              <div class="relative" style="height:160px; background-color:#f9f9f9;">
+                <div class="absolute top-2 left-2 z-10 rounded-sm px-1.5 py-0.5 text-xs font-bold text-white" style="background-color:#e63946;">-12%</div>
+                <img src="https://cdnprod.mafretailproxy.com/sys-master/images/hf5/hc6/10460200427550/375606_2.jpg" alt="Blue Band" class="w-full h-full object-contain p-2" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22160%22 height=%22160%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23aaa%22 font-size=%2214%22%3ENo Image%3C/text%3E%3C/svg%3E'" />
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-gray-800 leading-tight mb-1" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Blue Band Original Margarine 500g</div>
+                <div class="flex items-center gap-1 mb-2">
+                  <span class="font-bold" style="color:#0e5aa7; font-size:14px;">KES 219</span>
+                  <span class="line-through text-xs text-gray-400">KES 249</span>
+                </div>
+                <button onclick="addToCart(this)" class="add-to-cart w-full rounded-lg py-1.5 text-xs font-bold text-white transition-colors" style="background-color:#0e5aa7;">Add to Cart</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- END Household Essentials -->
+
+        <!-- ===== APP DOWNLOAD BANNER ===== -->
+        <div class="rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between px-6 py-6 gap-4" style="background: linear-gradient(135deg, #093b6c 0%, #0e5aa7 100%);">
+          <div class="flex-1">
+            <div class="font-bold text-white mb-1" style="font-size:22px; line-height:28px;">Get the App</div>
+            <div class="text-blue-200 text-sm mb-4">Download Carrefour app for exclusive deals &amp; faster checkout</div>
+            <div class="flex gap-3 flex-wrap">
+              <a href="#" class="flex items-center gap-2 bg-black rounded-xl px-3 py-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <div>
+                  <div class="text-gray-400" style="font-size:9px;">Download on the</div>
+                  <div class="text-white font-bold" style="font-size:12px;">App Store</div>
+                </div>
+              </a>
+              <a href="#" class="flex items-center gap-2 bg-black rounded-xl px-3 py-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.77c.26.15.55.23.85.23.3 0 .59-.08.85-.23l10.49-6.07-2.46-2.5-9.73 8.57zm-1.11-20.5c-.07.2-.11.41-.11.63v19.2c0 .22.04.43.11.63l10.08-10.23-10.08-10.23zm19.08 8.71l-2.6-1.5-2.82 2.52 2.82 2.52 2.63-1.52c.75-.43.75-1.59-.03-2.02zm-10.4 1.02L2.07 23.14c.08.03.17.05.26.05.3 0 .59-.08.85-.23l9.96-5.76-2.49-2.2z"/></svg>
+                <div>
+                  <div class="text-gray-400" style="font-size:9px;">Get it on</div>
+                  <div class="text-white font-bold" style="font-size:12px;">Google Play</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <img src="https://cdnprod.mafretailproxy.com/assets/images/Scheduled_Active_f11726afcc.png" alt="" class="h-32 opacity-20" />
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ======= FOOTER ======= -->
+  <footer style="background-color:#0e5aa7;" class="mt-8 text-white">
+    <div class="max-w-screen-xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+
+        <!-- About -->
+        <div>
+          <img alt="Carrefour" src="https://cdnprod.mafretailproxy.com/mafrp-web/assets/en/images/default/logo.svg" class="mb-4 brightness-0 invert" width="100" height="25" />
+          <p class="text-blue-200 text-sm leading-relaxed">Shop online for groceries, electronics, home appliances &amp; more. Delivered to your doorstep across Nairobi.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-bold text-sm mb-3 text-white">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-blue-200">
+            <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Carrefour Club</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Help -->
+        <div>
+          <h4 class="font-bold text-sm mb-3 text-white">Help &amp; Support</h4>
+          <ul class="space-y-2 text-sm text-blue-200">
+            <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Track My Order</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Returns &amp; Refunds</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-bold text-sm mb-3 text-white">Contact</h4>
+          <ul class="space-y-2 text-sm text-blue-200">
+            <li>📍 Westlands, Nairobi, Kenya</li>
+            <li>📞 0800 700 007 (Toll Free)</li>
+            <li>✉️ customercare@carrefourke.com</li>
+          </ul>
+          <div class="flex gap-3 mt-4">
+            <a href="#" class="text-blue-200 hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="text-blue-200 hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="text-blue-200 hover:text-white transition-colors">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="border-t border-blue-700 pt-6 pb-2">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="text-blue-200 text-xs">© 2025 Carrefour Kenya. All Rights Reserved. MAF Retail Kenya Ltd.</div>
+          <div class="flex items-center gap-2 text-xs text-blue-200">
+            <span>We accept:</span>
+            <div class="flex gap-2 items-center">
+              <div class="bg-white rounded px-1.5 py-0.5 text-xs font-bold text-blue-900">VISA</div>
+              <div class="bg-white rounded px-1.5 py-0.5 text-xs font-bold text-red-600">MC</div>
+              <div class="bg-white rounded px-1.5 py-0.5 text-xs font-bold text-green-700">M-PESA</div>
+              <div class="bg-white rounded px-1.5 py-0.5 text-xs font-bold text-gray-700">CASH</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 right-0 md:hidden z-50 bg-white border-t border-gray-200 flex justify-around items-center py-2" style="box-shadow:0 -2px 10px rgba(0,0,0,0.08);">
+    <a href="#" class="flex flex-col items-center gap-0.5">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e5aa7" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="text-xs font-semibold" style="color:#0e5aa7; font-size:10px;">Home</span>
+    </a>
+    <a href="#" class="flex flex-col items-center gap-0.5">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span class="text-xs font-medium text-gray-500" style="font-size:10px;">Categories</span>
+    </a>
+    <a href="#" class="flex flex-col items-center gap-0.5">
+      <div class="relative">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><path d="M7.5 21C8.12 21 8.625 20.5 8.625 19.875S8.12 18.75 7.5 18.75 6.375 19.25 6.375 19.875 6.88 21 7.5 21zM17.25 21C17.87 21 18.375 20.5 18.375 19.875S17.87 18.75 17.25 18.75 16.125 19.25 16.125 19.875 16.63 21 17.25 21zM3.96 6.75H20.79l-2.48 8.66c-.18.64-.76 1.09-1.43 1.09H7.88c-.67 0-1.25-.45-1.43-1.09L3.05 3.54C2.95 3.2 2.65 3 2.33 3H.75"/></svg>
+        <span id="cart-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center hidden" style="font-size:9px;">0</span>
+      </div>
+      <span class="text-xs font-medium text-gray-500" style="font-size:10px;">Cart</span>
+    </a>
+    <a href="#" class="flex flex-col items-center gap-0.5">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="text-xs font-medium text-gray-500" style="font-size:10px;">Account</span>
+    </a>
+  </nav>
+  <div class="h-16 md:hidden"></div>
+
+  <!-- ===== MYCLUB POINTS POPUP ===== -->
+  <div id="myclub-overlay" class="myclub-overlay fixed inset-0 z-[9999] flex items-center justify-center" style="background:rgba(0,0,0,0.58); display:none !important;">
+    <div id="myclub-popup" class="myclub-card relative bg-white rounded-2xl overflow-hidden" style="width:340px; max-width:92vw; box-shadow:0 24px 80px rgba(0,0,0,0.4);">
+
+      <!-- Close X -->
+      <button id="myclub-close" class="absolute top-3 right-3 z-20 flex items-center justify-center rounded-full w-7 h-7 text-white font-bold transition-opacity hover:opacity-100" style="background:rgba(255,255,255,0.18); opacity:0.8; font-size:14px;" aria-label="Close">✕</button>
+
+      <!-- Header gradient -->
+      <div style="background:linear-gradient(135deg, #093b6c 0%, #0e5aa7 100%); padding:22px 20px 20px;">
+        <!-- MyClub brand row -->
+        <div class="flex items-center gap-2 mb-4">
+          <div class="flex items-center justify-center rounded-full shrink-0" style="width:34px; height:34px; background:linear-gradient(135deg, #CF9E36, #e8b84b);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <div class="font-bold text-white" style="font-size:11px; letter-spacing:2px; line-height:14px;">MY CLUB</div>
+            <div style="font-size:9px; color:#93c5fd; letter-spacing:1px;">LOYALTY REWARDS</div>
+          </div>
+        </div>
+        <!-- Headline -->
+        <div class="font-bold text-white mb-4" style="font-size:19px; line-height:24px;">You have a special<br/>offer waiting! 🎉</div>
+        <!-- Points balance card -->
+        <div class="flex items-center gap-3 rounded-xl p-3" style="background:rgba(255,255,255,0.12);">
+          <div class="flex items-center justify-center rounded-full shrink-0" style="width:54px; height:54px; background:linear-gradient(135deg, #CF9E36, #e8b84b);">
+            <span style="font-size:26px;">⭐</span>
+          </div>
+          <div>
+            <div style="font-size:11px; color:#93c5fd;">Your Points Balance</div>
+            <div class="font-bold" style="color:#FFD700; font-size:32px; line-height:36px; letter-spacing:-1px;">29,000</div>
+            <div style="font-size:11px; color:#93c5fd;">MyClub Points Available</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div style="padding:18px 20px 20px;">
+        <p class="font-semibold text-gray-800 mb-2" style="font-size:14px; line-height:20px;">Redeem your points &amp; save on your next order!</p>
+        <p class="text-gray-500 mb-4" style="font-size:12px; line-height:18px;">
+          Your <strong style="color:#0e5aa7;">29,000 MyClub Points</strong> are worth
+          <strong style="color:#0e5aa7;">KES 290</strong> off your next purchase.
+          Points expire soon — use them before they're gone!
+        </p>
+
+        <!-- Benefits box -->
+        <div class="rounded-xl mb-4" style="background:#EEF4FF; padding:12px 14px;">
+          <div class="font-bold mb-2" style="font-size:11px; color:#0e5aa7; letter-spacing:0.5px;">WHAT YOU GET WITH 29,000 POINTS:</div>
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center gap-2" style="font-size:12px; color:#1e40af;">
+              <span style="color:#16a34a; font-weight:800; font-size:13px;">✓</span> KES 290 discount on your next order
+            </div>
+            <div class="flex items-center gap-2" style="font-size:12px; color:#1e40af;">
+              <span style="color:#16a34a; font-weight:800; font-size:13px;">✓</span> Valid across all product categories
+            </div>
+            <div class="flex items-center gap-2" style="font-size:12px; color:#1e40af;">
+              <span style="color:#16a34a; font-weight:800; font-size:13px;">✓</span> No minimum order value required
+            </div>
+            <div class="flex items-center gap-2" style="font-size:12px; color:#dc2626;">
+              <span style="color:#dc2626; font-weight:800; font-size:13px;">⏰</span> Expires in <strong>7 days</strong> — act fast!
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <button id="myclub-redeem" class="w-full rounded-xl font-bold text-white transition-all mb-2" style="background-color:#0e5aa7; padding:13px; font-size:14px; letter-spacing:0.3px;">
+          Redeem Now
+        </button>
+        <button id="myclub-later" class="w-full transition-colors" style="padding:6px; font-size:11px; color:#9ca3af;">
+          Maybe Later
+        </button>
+      </div>
+
+      <!-- Countdown bar -->
+      <div id="myclub-timer-bar" style="height:3px; background:#e5e7eb;">
+        <div id="myclub-timer-fill" style="height:100%; background:linear-gradient(90deg, #CF9E36, #0e5aa7); width:100%; transition:width 15s linear;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
